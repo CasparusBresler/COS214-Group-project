@@ -8,3 +8,10 @@ rocket::rocket(int s)
 rocket::~rocket()
 {
 }
+int rocket:: getSpeed(){
+return speed;
+}
+void rocket:: setSpeed(int s){
+speed = s;
+}
+//Getters and Setters
