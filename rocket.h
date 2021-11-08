@@ -9,14 +9,14 @@ using namespace std;
 class rocket
 {
 private:
-   int speed;
+    int speed;
 
 public:
     rocket(int s);
     ~rocket();
     int getSpeed();
     void setSpeed();
-
 };
 
-
+#endif
+//tests
