@@ -16,7 +16,6 @@ public:
     observer(Mediator*);
     void update(bool);
 
-
 };
 
 

@@ -5,6 +5,12 @@
 #include "Iterator.h"
 #include "satellite.h"
 
+Iterator::Iterator(vector<satellite *> s)
+{
+    satellites = s;
+    pos = 0;
+}
+
 satellite * Iterator::first()
 {
     return satellites[0];
@@ -32,11 +38,6 @@ bool Iterator::done()
         return false;
     }
 
-}
-
-void Iterator::reset()
-{
-    pos = 0;
 }
 
 void Iterator::update(bool tf)

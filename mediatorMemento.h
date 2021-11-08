@@ -7,19 +7,20 @@
 
 
 #include "Iterator.h"
+#include "aggregate.h"
 
 class observer;
 
 class mediatorMemento
 {
 private:
+    aggregate* satellites;
     Iterator* it;
-    vector<observer*> observers;
 public:
 
-    mediatorMemento(Iterator*, vector<observer*>);
+    mediatorMemento(aggregate*, Iterator*);
+    aggregate* getSatellites();
     Iterator* getIT();
-    vector<observer*> getObservers();
 
 
 };

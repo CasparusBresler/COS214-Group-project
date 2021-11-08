@@ -4,18 +4,18 @@
 
 #include "mediatorMemento.h"
 
-mediatorMemento::mediatorMemento(Iterator * i , vector<observer *> o)
+mediatorMemento::mediatorMemento(aggregate * i , Iterator* o)
 {
-    it = i;
-    observers = o;
+    satellites = i;
+    it = o;
 }
 
-Iterator * mediatorMemento::getIT()
+aggregate * mediatorMemento::getSatellites()
+{
+    return satellites;
+}
+
+Iterator* mediatorMemento::getIT()
 {
     return it;
-}
-
-vector<observer*> mediatorMemento::getObservers()
-{
-    return getObservers();
 }

@@ -17,12 +17,13 @@ private:
     vector<satellite*> satellites;
     int pos;
 public:
+    Iterator(vector<satellite*>);
     satellite* first();
     satellite* next();
     satellite* current();
     bool done();
-    void reset();
     void update(bool);
+
 };
 
 

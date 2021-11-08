@@ -70,3 +70,17 @@ void satellite::notify()
 {
     observ->update(System_online);
 }
+
+observer* satellite::getObserv()
+{
+    return observ;
+}
+
+satellite::satellite(string n, Mediator* med)
+{
+    inorbit = false;
+    System_online = false;
+    name = n;
+    observ = new observer(med);
+}
+

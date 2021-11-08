@@ -9,6 +9,7 @@
 #include "Iterator.h"
 #include "mediatorMemento.h"
 #include "vector"
+#include "aggregate.h"
 
 using namespace std;
 
@@ -17,11 +18,11 @@ class observer;
 class Mediator
 {
 private:
+    aggregate* satellites;
     Iterator* it;
-    vector<observer*> observers;
 
 public:
-    Mediator(Iterator* it);
+    Mediator(aggregate* a);
     void warnOthers(bool tf);
     void setMemento(mediatorMemento* m);
     mediatorMemento* createMemento();

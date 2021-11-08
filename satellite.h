@@ -5,8 +5,9 @@
 #ifndef SATELLITE_H
 #define SATELLITE_H
 
-# include "string"
+# include <string>
 #include "observer.h"
+#include "Mediator.h"
 
 using namespace std;
 
@@ -28,7 +29,8 @@ public:
     bool getS0();
     void setSOandUpdate(bool);
     void notify();
-
+    observer* getObserv();
+    satellite(string, Mediator*);
 };
 
 

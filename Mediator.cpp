@@ -5,30 +5,32 @@
 #include <iostream>
 #include "Mediator.h"
 
-Mediator::Mediator(Iterator* i)
+Mediator::Mediator(aggregate* a)
 {
-    it = i;
+    satellites = a;
 }
 
 void Mediator::warnOthers(bool tf)
 {
+    it = satellites->createIterator();
     while(!it->done())
     {
         it->update(tf);
 
         it->next();
     }
-    it->reset();
+    delete it;
+
 }
 
 void Mediator::setMemento(mediatorMemento *m)
 {
+    satellites = m->getSatellites();
     it = m->getIT();
-    observers = m->getObservers();
 }
 
 mediatorMemento * Mediator::createMemento()
 {
-    mediatorMemento* temp = new mediatorMemento(it, observers);
+    mediatorMemento* temp = new mediatorMemento(satellites, it);
     return temp;
 }
