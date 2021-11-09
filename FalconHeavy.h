@@ -10,6 +10,8 @@ using namespace std;
 class FalconHeavy : public strategy
 {
 private:
+    vector<satellite *> satellites;
+
 public:
     FalconHeavy();
     ~FalconHeavy();

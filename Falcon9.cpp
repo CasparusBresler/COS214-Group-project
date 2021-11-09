@@ -43,6 +43,7 @@ void Falcon9::deploy()
     for (it = satellites.begin(); it != satellites.end(); ++it)
     {
         (*it)->setOrbit(true);
+        (*it)->setSO(true);
         satellites.erase(it);
         count++;
     }
