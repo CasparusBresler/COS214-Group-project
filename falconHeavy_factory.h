@@ -3,6 +3,7 @@
 #ifndef __FALCONHEAVY_FACTORY_H__
 #define __FALCONHEAVY_FACTORY_H__
 
+#include "FalconHeavy.h"
 #include "falcon_factory.h"
 
 using namespace std;
