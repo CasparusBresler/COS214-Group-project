@@ -3,6 +3,7 @@
 #ifndef __FALCON9_FACTORY_H__
 #define __FALCON9_FACTORY_H__
 
+#include "Falcon9.h"
 #include "falcon_factory.h"
 
 using namespace std;

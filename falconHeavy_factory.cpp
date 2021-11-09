@@ -12,5 +12,6 @@ falconHeavy_factory::~falconHeavy_factory()
 
 strategy *falconHeavy_factory::createFalcon()
 {
-    //TODO create and return falcon heavy rockets
+    strategy *tempRocket = new FalconHeavy();
+    return tempRocket;
 }
