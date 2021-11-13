@@ -18,3 +18,9 @@ void crew::setName(string inS)
 {
     this->name = inS;
 }
+
+crew* crew::clone()
+{
+    crew* tempcrew = new crew(this->getName());
+    return tempcrew;
+}

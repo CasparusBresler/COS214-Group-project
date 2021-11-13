@@ -18,3 +18,9 @@ void cargo::setName(string inS)
 {
     this->name = inS;
 }
+
+cargo* cargo::clone()
+{
+    cargo* tempcargo = new cargo(this->getName());
+    return tempcargo;
+}

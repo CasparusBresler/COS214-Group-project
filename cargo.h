@@ -17,6 +17,7 @@ public:
     ~cargo();
     string getName();
     void setName(string inS);
+    cargo* clone();
 };
 
 #endif // __CARGO_H__

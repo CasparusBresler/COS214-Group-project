@@ -17,6 +17,7 @@ public:
     ~crew();
     string getName();
     void setName(string inS);
+    crew* clone();
 };
 
 #endif // __CREW_H__
