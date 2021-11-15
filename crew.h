@@ -1,7 +1,5 @@
-//Delete before prod: Just a basic class structure
-
-#ifndef __CREW_H__
-#define __CREW_H__
+#ifndef CREW_H
+#define CREW_H
 
 #include "storage.h"
 
@@ -16,8 +14,7 @@ public:
     crew(string s);
     ~crew();
     string getName();
-    void setName(string inS);
-    crew* clone();
+    void setName(string word);
 };
 
-#endif // __CREW_H__
+#endif //CREW_H
