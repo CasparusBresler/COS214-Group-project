@@ -1,3 +1,4 @@
+
 //Daniel de Nobrega
 
 #ifndef __UNDOCKED_H__
@@ -19,5 +20,4 @@ public:
     bool getstate();
     docked_state* clone();
 };
-
 #endif // __UNDOCKED_H__
