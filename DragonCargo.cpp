@@ -49,7 +49,8 @@ using namespace std;
     void DragonCargo::unLoad()
     {
          for(int i = 0; i< 12 < i++)
-        {
+        {  
+            destination->cargohold.add(cargoHold[i]);
             cargoHold[i] = NULL;
         }
     }
