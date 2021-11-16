@@ -1,8 +1,7 @@
-//Daniel de Nobrega
 
 #include "ISSMemento.h"
 
-ISSMemento::ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state* ds) 
+ISSMemento::ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state* ds)
 {
     vector<crew *>::iterator itCrew;
     for (itCrew = crewV.begin(); itCrew != crewV.end(); ++itCrew)
@@ -19,22 +18,22 @@ ISSMemento::ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state*
     this->state = ds->clone();
 }
 
-ISSMemento::~ISSMemento() 
+ISSMemento::~ISSMemento()
 {
-    
+
 }
 
-docked_state* ISSMemento::getState() 
+docked_state* ISSMemento::getState()
 {
     return state;
 }
 
-vector<crew*> ISSMemento::getcrew() 
+vector<crew*> ISSMemento::getcrew()
 {
     return crewmembers;
 }
 
-vector<cargo*> ISSMemento::getcargo() 
+vector<cargo*> ISSMemento::getcargo()
 {
     return cargohold;
 }

@@ -18,4 +18,5 @@ satellite * satellite_factory::create_sat()
 {
     string name = "sat" + to_string(counter);
     satellite* sat = new satellite(name, med);
+    return sat;
 }

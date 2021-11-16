@@ -6,15 +6,17 @@ undocked::undocked(/* args */) {}
 
 undocked::~undocked() {}
 
-docked_state* undocked::changestate(ISS* change) 
+docked_state* undocked::changestate()
 {
-    change->setState(new docked());
+    docked_state* temp = new docked();
+    return temp;
+
 }
 
 bool undocked::getstate()
 {
     return false;
-}  
+}
 
 docked_state* undocked::clone()
 {

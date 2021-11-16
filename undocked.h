@@ -1,3 +1,4 @@
+
 //Daniel de Nobrega
 
 #ifndef __UNDOCKED_H__
@@ -15,9 +16,8 @@ private:
 public:
     undocked(/* args */);
     ~undocked();
-    docked_state* changestate(ISS* change);
+    docked_state* changestate();
     bool getstate();
     docked_state* clone();
 };
-
 #endif // __UNDOCKED_H__

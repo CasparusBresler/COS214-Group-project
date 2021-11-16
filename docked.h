@@ -15,7 +15,7 @@ private:
 public:
     docked(/* args */);
     ~docked();
-    docked_state* changestate(ISS* change);
+    docked_state* changestate();
     bool getstate();
     docked_state* clone();
 };

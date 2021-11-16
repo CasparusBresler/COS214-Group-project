@@ -1,6 +1,10 @@
+//
+// Created by micha on 2021/11/16.
+//
+
 #include "crew.h"
 
-crew::crew(string s)
+crew::crew(string s) : storage()
 {
     this->name = s;
 }
@@ -14,13 +18,13 @@ string crew::getName()
     return this->name;
 }
 
-void crew::setName(string inS)
+void crew::setName(string word)
 {
-    this->name = inS;
+    this->name = word;
 }
 
-crew* crew::clone()
+crew * crew::clone()
 {
-    crew* tempcrew = new crew(this->getName());
-    return tempcrew;
+    crew* temp = new crew(getName());
+    return temp;
 }

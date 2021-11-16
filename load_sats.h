@@ -3,7 +3,7 @@
 class load_sats : public falcon_command
 {
 private:
-   
+
 public:
     load_sats();
     ~load_sats();

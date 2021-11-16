@@ -5,15 +5,16 @@ docked::docked(/* args */) {}
 
 docked::~docked() {}
 
-docked_state* docked::changestate(ISS* change) 
+docked_state* docked::changestate()
 {
-    change->setState(new undocked());
+    docked_state* temp = new undocked;
+    return temp;
 }
 
 bool docked::getstate()
 {
     return true;
-}  
+}
 
 docked_state* docked::clone()
 {

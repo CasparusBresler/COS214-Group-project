@@ -1,6 +1,6 @@
 #include "cargo.h"
 
-cargo::cargo(string s)
+cargo::cargo(string s) : storage()
 {
     this->name = s;
 }
@@ -14,13 +14,14 @@ string cargo::getName()
     return this->name;
 }
 
-void cargo::setName(string inS)
+void cargo::setName(string word)
 {
-    this->name = inS;
+    this->name = word;
 }
 
-cargo* cargo::clone()
+cargo * cargo::clone()
 {
-    cargo* tempcargo = new cargo(this->getName());
-    return tempcargo;
+    cargo* temp = new cargo(this->getName());
+    return temp;
+
 }

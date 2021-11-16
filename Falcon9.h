@@ -4,6 +4,7 @@
 #define __FALCON9_H__
 
 #include "strategy.h"
+#include "FirstStageRocket.h"
 
 using namespace std;
 
@@ -11,8 +12,9 @@ class Falcon9 : public strategy
 {
 private:
     vector<satellite *> satellites;
+    FirstStageRocket* firstStageRocket;
 public:
-    Falcon9();
+    Falcon9(FirstStageRocket* fsr);
     ~Falcon9();
     void launch_sequence();
     void fire_booster1();

@@ -1,7 +1,9 @@
-//Delete before prod: Just a basic class structure
+//
+// Created by micha on 2021/11/16.
+//
 
-#ifndef __CARGO_H__
-#define __CARGO_H__
+#ifndef CARGO_H
+#define CARGO_H
 
 #include "storage.h"
 
@@ -10,14 +12,14 @@ using namespace std;
 class cargo : public storage
 {
 private:
-    string name;
 
+    string name;
 public:
     cargo(string s);
     ~cargo();
     string getName();
-    void setName(string inS);
+    void setName(string word);
     cargo* clone();
 };
 
-#endif // __CARGO_H__
+#endif //CARGO_H
