@@ -15,7 +15,7 @@ public:
     rocket(int s);
     ~rocket();
     int getSpeed();
-    void setSpeed();
+    void setSpeed(int);
 };
 
 #endif

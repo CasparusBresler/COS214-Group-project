@@ -33,16 +33,14 @@ void satellite::detach()
 void satellite::setSO(bool tf)
 {
     System_online = tf;
-    if(tf == false)
+    if (tf == false)
     {
-        cout << "Satellite " + name + "is offline" << endl;
+        cout << "Satellite " + name + " is offline" << endl;
     }
     else
     {
-        cout << "Satellite " + name + "is online" << endl;
+        cout << "Satellite " + name + " is online" << endl;
     }
-
-
 }
 
 bool satellite::getS0()
@@ -53,7 +51,7 @@ bool satellite::getS0()
 void satellite::setSOandUpdate(bool tf)
 {
     System_online = tf;
-    if(tf = false)
+    if (tf = false)
     {
         cout << "Satellite " + name + " has shutdown!" << endl;
     }
@@ -61,7 +59,6 @@ void satellite::setSOandUpdate(bool tf)
     {
         cout << "Satellite " + name + " is back online!" << endl;
     }
-
 
     notify();
 }
@@ -71,12 +68,12 @@ void satellite::notify()
     observ->update(System_online);
 }
 
-observer* satellite::getObserv()
+observer *satellite::getObserv()
 {
     return observ;
 }
 
-satellite::satellite(string n, Mediator* med)
+satellite::satellite(string n, Mediator *med)
 {
     inorbit = false;
     System_online = false;

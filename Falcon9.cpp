@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Falcon9.h"
 
-Falcon9::Falcon9(FirstStageRocket* fsr)
+Falcon9::Falcon9(FirstStageRocket *fsr)
 {
     firstStageRocket = fsr;
 }
@@ -25,7 +25,6 @@ void Falcon9::launch_sequence()
 
 void Falcon9::fire_booster1()
 {
-    //cout << "9 Merlin Engines fired successfully" << endl;
     firstStageRocket->fire();
 }
 
@@ -44,7 +43,8 @@ void Falcon9::deploy()
     int count = 0;
     cout << "Deploying satellites" << endl;
     vector<satellite *>::iterator it;
-    for (it = satellites.begin(); it != satellites.end(); ++it)
+    it = satellites.begin();
+    while (it != satellites.end())
     {
         (*it)->setOrbit(true);
         (*it)->setSO(true);

@@ -3,7 +3,7 @@
 #include <iostream>
 #include "FalconHeavy.h"
 
-FalconHeavy::FalconHeavy(FirstStageRocket* fsr)
+FalconHeavy::FalconHeavy(FirstStageRocket *fsr)
 {
     firstStageRocket = fsr;
 }
@@ -25,7 +25,6 @@ void FalconHeavy::launch_sequence()
 
 void FalconHeavy::fire1()
 {
-    //cout << "27 Merlin Engines on all 3 cores fired successfully" << endl;
     firstStageRocket->fire();
 }
 
@@ -44,7 +43,8 @@ void FalconHeavy::deploy()
     int count = 0;
     cout << "Deploying satellites" << endl;
     vector<satellite *>::iterator it;
-    for (it = satellites.begin(); it != satellites.end(); ++it)
+    it = satellites.begin();
+    while (it != satellites.end())
     {
         (*it)->setOrbit(true);
         (*it)->setSO(true);
