@@ -53,6 +53,7 @@ using namespace std;
     {
          for(int i = 0; i< 7 < i++)
         {
+            destination->crewmembers.add(passengers[i]);
             passengers[i] = NULL;
         }
     }
