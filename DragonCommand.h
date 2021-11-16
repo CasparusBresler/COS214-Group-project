@@ -1,4 +1,7 @@
-//Rachel Hamilton and Regan Shen
+//
+// Created by micha on 2021/11/16.
+//
+
 #ifndef DRAGONCOMMAND_H
 #define DRAGONCOMMAND_H
 
@@ -13,10 +16,10 @@ private:
 public:
     DragonCommand();
     ~DragonCommand();
-   virtual void execute(template* , storage*)=0;
+    virtual void execute(dragon_template* , storage*)=0;
 
-    
-  
+
+
 };
 
 #endif // DRAGONCOMMAND_H

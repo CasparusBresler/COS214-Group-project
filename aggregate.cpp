@@ -7,6 +7,7 @@
 Iterator * aggregate::createIterator()
 {
     Iterator* temp = new Iterator(satellites);
+    return temp;
 }
 
 void aggregate::addSat(satellite *s)

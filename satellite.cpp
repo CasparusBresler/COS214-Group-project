@@ -83,4 +83,3 @@ satellite::satellite(string n, Mediator* med)
     name = n;
     observ = new observer(med);
 }
-

@@ -1,4 +1,3 @@
-//Rachel Hamilton and Regan Shen
 #ifndef LOAD_H
 #define LOAD_H
 
@@ -11,9 +10,9 @@ class load : public DragonCommand
 private:
 public:
 
-load();
-~load();
-void execute(template* , storage*) override;
+    load();
+    ~load();
+    void execute(dragon_template* , storage*) override;
 
 };
 

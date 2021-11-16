@@ -5,7 +5,7 @@ ISS::ISS(/* args */) {}
 
 ISS::~ISS() {}
 
-void ISS::setMemento(ISSMemento *m) 
+void ISS::setMemento(ISSMemento *m)
 {
     vector<crew *>::iterator itCrew;
     for (itCrew = m->getcrew().begin(); itCrew != m->getcrew().end(); ++itCrew)
@@ -22,14 +22,34 @@ void ISS::setMemento(ISSMemento *m)
     this->state = m->getState()->clone();
 }
 
-ISSMemento* ISS::createMemento() 
+ISSMemento* ISS::createMemento()
 {
     ISSMemento* newMemento = new ISSMemento(this->crewmembers, this->cargohold, this->state);
     return newMemento;
 }
 
-void ISS::setState(docked_state *state) 
+void ISS::setState(docked_state *state)
 {
     delete this->state;
     this->state = state;
+}
+
+void ISS::changeState()
+{
+    this->state = state->changestate();
+}
+
+vector<cargo *> ISS::getCargo()
+{
+    return cargohold;
+}
+
+vector<crew *> ISS::getCrew()
+{
+    return crewmembers;
+}
+
+docked_state *ISS::getDockedState()
+{
+    return state;
 }

@@ -1,3 +1,7 @@
+//
+// Created by micha on 2021/11/16.
+//
+
 #ifndef UNLOAD_H
 #define UNLOAD_H
 
@@ -5,14 +9,14 @@
 
 using namespace std;
 
-class load : public DragonCommand
+class unload : public DragonCommand
 {
 private:
 public:
 
-unload();
-~unload();
-void execute(template* , storage*) override;
+    unload();
+    ~unload();
+    void execute(dragon_template* , storage*) override;
 
 };
 

@@ -1,4 +1,7 @@
-//Rachel Hamilton and Regan Shen
+//
+// Created by micha on 2021/11/16.
+//
+
 #ifndef DETACH_H
 #define DETACH_H
 
@@ -11,9 +14,9 @@ class detach : public DragonCommand
 private:
 public:
 
-detach();
-~detach();
-void execute(template* , storage*) override;
+    detach();
+    ~detach();
+    void execute(dragon_template* , storage*) override;
 
 };
 

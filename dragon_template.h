@@ -1,8 +1,13 @@
-//Rachel Hamilton and Regan Shen
+//
+// Created by micha on 2021/11/16.
+//
+
 #ifndef __DRAGON_TEMPLATE_H__
 #define __DRAGON_TEMPLATE_H__
 
 #include "storage.h"
+#include "ISS.h"
+
 using namespace std;
 
 class dragon_template
@@ -15,7 +20,9 @@ public:
     void load(storage* s);
     virtual bool checkIfSpace()=0;
     virtual void loadIn(storage*)=0;
-    virtual void unLoad()=0;
+    virtual void unload()=0;
+    virtual void launch() = 0;
+    virtual ISS* getDest() = 0;
 
 };
 

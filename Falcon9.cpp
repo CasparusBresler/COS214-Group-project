@@ -1,9 +1,11 @@
 // Casparus Bresler
 
+#include <iostream>
 #include "Falcon9.h"
 
-Falcon9::Falcon9()
+Falcon9::Falcon9(FirstStageRocket* fsr)
 {
+    firstStageRocket = fsr;
 }
 
 Falcon9::~Falcon9()
@@ -14,6 +16,7 @@ void Falcon9::launch_sequence()
 {
     cout << "Launch sequence initiated" << endl;
     fire_booster1();
+    firstStageRocket == nullptr;
     cout << "Stage 1 detached" << endl;
     fire_booster2();
     cout << "Orbit reached" << endl;
@@ -22,7 +25,8 @@ void Falcon9::launch_sequence()
 
 void Falcon9::fire_booster1()
 {
-    cout << "9 Merlin Engines fired successfully" << endl;
+    //cout << "9 Merlin Engines fired successfully" << endl;
+    firstStageRocket->fire();
 }
 
 void Falcon9::fire_booster2()

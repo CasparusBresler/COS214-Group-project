@@ -4,12 +4,12 @@ using namespace std;
 
 dragon_template::dragon_template()
 {
-    
+
 }
 
 dragon_template::~dragon_template()
 {
-    
+
 }
 
 

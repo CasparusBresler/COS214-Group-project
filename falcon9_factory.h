@@ -14,7 +14,7 @@ private:
 public:
     falcon9_factory();
     ~falcon9_factory();
-    strategy *createFalcon();
+    strategy *createFalcon(FirstStageRocket*);
 };
 
 #endif // __FALCON9_FACTORY_H__

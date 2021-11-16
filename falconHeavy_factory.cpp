@@ -10,8 +10,8 @@ falconHeavy_factory::~falconHeavy_factory()
 {
 }
 
-strategy *falconHeavy_factory::createFalcon()
+strategy *falconHeavy_factory::createFalcon(FirstStageRocket* fsr)
 {
-    strategy *tempRocket = new FalconHeavy();
+    strategy *tempRocket = new FalconHeavy(fsr);
     return tempRocket;
 }

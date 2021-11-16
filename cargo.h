@@ -1,4 +1,7 @@
-//Rachel Hamilton and Regan Shen
+//
+// Created by micha on 2021/11/16.
+//
+
 #ifndef CARGO_H
 #define CARGO_H
 
@@ -16,6 +19,7 @@ public:
     ~cargo();
     string getName();
     void setName(string word);
+    cargo* clone();
 };
 
 #endif //CARGO_H

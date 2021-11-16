@@ -9,8 +9,8 @@ falcon9_factory::~falcon9_factory()
 {
 }
 
-strategy *falcon9_factory::createFalcon()
+strategy *falcon9_factory::createFalcon(FirstStageRocket* fsr)
 {
-    strategy *tempRocket = new Falcon9();
+    strategy *tempRocket = new Falcon9(fsr);
     return tempRocket;
 }

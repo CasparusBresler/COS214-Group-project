@@ -3,11 +3,11 @@
 
 using namespace std;
 
- storage::storage()
- {
-     /////
- }
-   
+storage::storage()
+{
+    /////
+}
+
 storage::~storage()
 {
     ////

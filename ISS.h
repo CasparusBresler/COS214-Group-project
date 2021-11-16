@@ -24,6 +24,11 @@ public:
     void setMemento(ISSMemento *m);
     ISSMemento *createMemento();
     void setState(docked_state *state);
+    void changeState();
+    vector<cargo*> getCargo();
+    vector<crew*> getCrew();
+
+    docked_state *getDockedState();
 };
 
 #endif // __ISS_H__

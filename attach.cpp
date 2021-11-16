@@ -1,5 +1,10 @@
+//
+// Created by micha on 2021/11/16.
+//
+
+#include <iostream>
 #include "attach.h"
-//Rachel Hamilton and Regan Shen
+
 using namespace std;
 
 attach::attach()
@@ -12,7 +17,17 @@ attach::~attach()
 
 }
 
-void attach::execute(template* r , storage* s)
+void attach::execute(dragon_template* r , storage* s)
 {
-    cout<<"The spaceship is attached."<<endl;
+    if(r->getDest()->getDockedState()->getstate() == false)
+    {
+        cout<<"The spaceship is attached."<<endl;
+    }
+    else
+    {
+        cout << "Cannot dock as dock is currently taken" << endl;
+    }
+
+
+
 }

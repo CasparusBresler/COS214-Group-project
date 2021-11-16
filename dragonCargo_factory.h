@@ -1,3 +1,7 @@
+//
+// Created by micha on 2021/11/16.
+//
+
 #ifndef __DRAGONCARGO_FACTORY_H__
 #define __DRAGONCARGO_FACTORY_H__
 
@@ -11,7 +15,7 @@ private:
 public:
     dragonCargo_factory();
     ~dragonCargo_factory();
-    dragon_template *createDragon();
+    dragon_template *createDragon(ISS*);
 };
 
 #endif // __DRAGONCARGO_FACTORY_H__

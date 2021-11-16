@@ -4,6 +4,7 @@
 #define __FALCONHEAVY_H__
 
 #include "strategy.h"
+#include "FirstStageRocket.h"
 
 using namespace std;
 
@@ -11,9 +12,10 @@ class FalconHeavy : public strategy
 {
 private:
     vector<satellite *> satellites;
+    FirstStageRocket* firstStageRocket;
 
 public:
-    FalconHeavy();
+    FalconHeavy(FirstStageRocket*);
     ~FalconHeavy();
     void launch_sequence();
     void fire1();

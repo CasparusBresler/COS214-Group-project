@@ -1,9 +1,11 @@
 // Casparus Bresler
 
+#include <iostream>
 #include "FalconHeavy.h"
 
-FalconHeavy::FalconHeavy()
+FalconHeavy::FalconHeavy(FirstStageRocket* fsr)
 {
+    firstStageRocket = fsr;
 }
 
 FalconHeavy::~FalconHeavy()
@@ -14,6 +16,7 @@ void FalconHeavy::launch_sequence()
 {
     cout << "Launch sequence initiated" << endl;
     fire1();
+    firstStageRocket == nullptr;
     cout << "Stage 1 detached" << endl;
     fire2();
     cout << "Orbit reached" << endl;
@@ -22,7 +25,8 @@ void FalconHeavy::launch_sequence()
 
 void FalconHeavy::fire1()
 {
-    cout << "27 Merlin Engines on all 3 cores fired successfully" << endl;
+    //cout << "27 Merlin Engines on all 3 cores fired successfully" << endl;
+    firstStageRocket->fire();
 }
 
 void FalconHeavy::fire2()

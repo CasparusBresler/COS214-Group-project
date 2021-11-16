@@ -1,3 +1,7 @@
+//
+// Created by micha on 2021/11/16.
+//
+
 #ifndef CREW_H
 #define CREW_H
 
@@ -15,6 +19,7 @@ public:
     ~crew();
     string getName();
     void setName(string word);
+    crew* clone();
 };
 
 #endif //CREW_H

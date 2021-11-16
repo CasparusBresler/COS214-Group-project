@@ -1,18 +1,22 @@
+//
+// Created by micha on 2021/11/16.
+//
+
 #include "unload.h"
 
 using namespace std;
 
-unload::load()
+unload::unload()
 {
 
 }
 
-unload::~load()
+unload::~unload()
 {
 
 }
 
-void load::execute(template* r , storage* s)
+void unload::execute(dragon_template* r , storage* s)
 {
-    r->unload(s);
+    r->unload();
 }

@@ -1,22 +1,33 @@
-//Rachel Hamilton and Regan Shen
+//
+// Created by micha on 2021/11/16.
+//
+
 #ifndef __DRAGONCREW_H__
 #define __DRAGONCREW_H__
 
 #include "dragon_template.h"
+#include "crew.h"
+#include "vector"
+#include "ISS.h"
+
 using namespace std;
 
 class DragonCrew : public dragon_template
 {
 private:
-crew** passengers;
-ISS* destination;
+    int size;
+    int loaded;
+    vector<crew*> passengers;
+    ISS* destination;
 public:
-    DragonCrew();
+    DragonCrew(ISS*);
     ~DragonCrew();
-    void unLoad() override;
+    void unload() override;
     bool checkIfSpace() override;
     void loadIn(storage*) override;
-    
+    void launch() override;
+    ISS* getDest() override;
+
 };
 
 #endif // __DRAGONCREW_H__
