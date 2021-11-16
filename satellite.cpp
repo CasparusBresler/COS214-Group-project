@@ -51,7 +51,7 @@ bool satellite::getS0()
 void satellite::setSOandUpdate(bool tf)
 {
     System_online = tf;
-    if (tf = false)
+    if (tf == false)
     {
         cout << "Satellite " + name + " has shutdown!" << endl;
     }
@@ -79,4 +79,16 @@ satellite::satellite(string n, Mediator *med)
     System_online = false;
     name = n;
     observ = new observer(med);
+}
+
+void satellite::workLoad(bool bIn)
+{
+    if (!bIn)
+    {
+        cout << "Satellite " + name + " increased its workload" << endl;
+    }
+    else
+    {
+        cout << "Satellite " + name + " decreased its workload" << endl;
+    }
 }

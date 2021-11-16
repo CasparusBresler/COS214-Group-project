@@ -11,17 +11,17 @@ Iterator::Iterator(vector<satellite *> s)
     pos = 0;
 }
 
-satellite * Iterator::first()
+satellite *Iterator::first()
 {
     return satellites[0];
 }
 
-satellite * Iterator::current()
+satellite *Iterator::current()
 {
     return satellites[pos];
 }
 
-satellite * Iterator::next()
+satellite *Iterator::next()
 {
     pos++;
     return satellites[pos];
@@ -29,7 +29,7 @@ satellite * Iterator::next()
 
 bool Iterator::done()
 {
-    if(pos == satellites.size() - 1)
+    if (pos == satellites.size() - 1)
     {
         return true;
     }
@@ -37,12 +37,10 @@ bool Iterator::done()
     {
         return false;
     }
-
 }
 
 void Iterator::update(bool tf)
 {
-    this->current()->setSO(tf);
+    this->current()->workLoad(tf);
+    //this->current()->setSO(tf);
 }
-
-

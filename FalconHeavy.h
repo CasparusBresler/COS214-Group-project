@@ -11,11 +11,12 @@ using namespace std;
 class FalconHeavy : public strategy
 {
 private:
+    int satCount;
     vector<satellite *> satellites;
-    FirstStageRocket* firstStageRocket;
+    FirstStageRocket *firstStageRocket;
 
 public:
-    FalconHeavy(FirstStageRocket*);
+    FalconHeavy(FirstStageRocket *);
     ~FalconHeavy();
     void launch_sequence();
     void fire1();

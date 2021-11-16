@@ -20,11 +20,12 @@ bool TestBed::run()
 #define NUMSATS 60
 #define NUMFALCONS 2
 
-    //vector<satellite *> sats;
     aggregate *agg = new aggregate();
     Mediator *med = new Mediator(agg);
 
-    falcon_command *ls = new load_sats();
+    falcon_command *ls = new load_sats();   // the load sats command
+    falcon_command *ds = new deploy_sats(); // the deploy sats command
+    falcon_command *la = new launch();      // the launch command
 
     FirstStageRocket *first9 = new FirstStageRocket(9);
     FirstStageRocket *firstH = new FirstStageRocket(27);
@@ -48,9 +49,23 @@ bool TestBed::run()
     for (int i = 0; i < NUMSATS; i++)
     {
         ls->execute(falcons[0], sats[i]);
-        //falcons[0]->load_sat(sats[i]);
     }
 
-    falcons[0]->launch_sequence();
+    la->execute(falcons[0], NULL);
+    //falcons[0]->launch_sequence();
     falcons[1]->launch_sequence();
+
+    ds->execute(falcons[0], NULL);
+
+    if (sats[10]->getOrbit())
+    {
+        cout << "Satellite: " << sats[10]->getName() << " is in orbit" << endl;
+    }
+    else
+    {
+        cout << "Satellite: " << sats[10]->getName() << " is NOT in orbit" << endl;
+    }
+    cout << "Status: " << sats[2]->getS0() << endl;
+    sats[10]->setSOandUpdate(false);
+    sats[10]->setSOandUpdate(true);
 }

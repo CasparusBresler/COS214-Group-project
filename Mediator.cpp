@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Mediator.h"
 
-Mediator::Mediator(aggregate* a)
+Mediator::Mediator(aggregate *a)
 {
     satellites = a;
 }
@@ -13,14 +13,13 @@ Mediator::Mediator(aggregate* a)
 void Mediator::warnOthers(bool tf)
 {
     it = satellites->createIterator();
-    while(!it->done())
+    while (!it->done())
     {
         it->update(tf);
 
         it->next();
     }
     delete it;
-
 }
 
 void Mediator::setMemento(mediatorMemento *m)
@@ -29,8 +28,8 @@ void Mediator::setMemento(mediatorMemento *m)
     it = m->getIT();
 }
 
-mediatorMemento * Mediator::createMemento()
+mediatorMemento *Mediator::createMemento()
 {
-    mediatorMemento* temp = new mediatorMemento(satellites, it);
+    mediatorMemento *temp = new mediatorMemento(satellites, it);
     return temp;
 }

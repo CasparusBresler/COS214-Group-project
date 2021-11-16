@@ -31,6 +31,7 @@ public:
     void notify();
     observer* getObserv();
     satellite(string, Mediator*);
+    void workLoad(bool);
 };
 
 

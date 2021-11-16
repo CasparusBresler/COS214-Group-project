@@ -6,6 +6,7 @@
 FalconHeavy::FalconHeavy(FirstStageRocket *fsr)
 {
     firstStageRocket = fsr;
+    satCount = 0;
 }
 
 FalconHeavy::~FalconHeavy()
@@ -35,21 +36,36 @@ void FalconHeavy::fire2()
 
 void FalconHeavy::load_sat(satellite *s)
 {
-    satellites.push_back(s);
+    if (satCount < 60)
+    {
+        satellites.push_back(s);
+        satCount++;
+    }
+    else
+    {
+        cout << "No more space for satellites" << endl;
+    }
 }
 
 void FalconHeavy::deploy()
 {
-    int count = 0;
-    cout << "Deploying satellites" << endl;
-    vector<satellite *>::iterator it;
-    it = satellites.begin();
-    while (it != satellites.end())
+    if (satellites.size() > 0)
     {
-        (*it)->setOrbit(true);
-        (*it)->setSO(true);
-        satellites.erase(it);
-        count++;
+        int count = 0;
+        cout << "Deploying satellites" << endl;
+        vector<satellite *>::iterator it;
+        it = satellites.begin();
+        while (it != satellites.end())
+        {
+            (*it)->setOrbit(true);
+            (*it)->setSO(true);
+            satellites.erase(it);
+            count++;
+        }
+        cout << count << " satellites deployed successfully" << endl;
     }
-    cout << count << " satellites deployed successfully" << endl;
+    else
+    {
+        cout << "There are no satellites to deploy" << endl;
+    }
 }
