@@ -14,13 +14,7 @@ string crew::getName()
     return this->name;
 }
 
-void crew::setName(string inS)
+void crew::setName(string word)
 {
-    this->name = inS;
-}
-
-crew* crew::clone()
-{
-    crew* tempcrew = new crew(this->getName());
-    return tempcrew;
+    this->name = word;
 }

@@ -1,4 +1,4 @@
-// Casparus Bresler
+
 
 #include "strategy.h"
 

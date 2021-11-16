@@ -1,5 +1,4 @@
-//Delete before prod: Just a basic class structure
-
+//Rachel Hamilton and Regan Shen
 #ifndef __STORAGE_H__
 #define __STORAGE_H__
 
@@ -9,6 +8,7 @@ using namespace std;
 class storage
 {
 private:
+
 public:
     storage();
     ~storage();

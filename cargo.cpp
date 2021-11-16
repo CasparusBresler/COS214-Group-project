@@ -1,3 +1,4 @@
+//Rachel Hamilton and Regan Shen
 #include "cargo.h"
 
 cargo::cargo(string s)
@@ -14,13 +15,7 @@ string cargo::getName()
     return this->name;
 }
 
-void cargo::setName(string inS)
+void cargo::setName(string word)
 {
-    this->name = inS;
-}
-
-cargo* cargo::clone()
-{
-    cargo* tempcargo = new cargo(this->getName());
-    return tempcargo;
+    this->name = word;
 }
