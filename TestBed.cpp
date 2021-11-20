@@ -6,6 +6,7 @@
 #include "load_sats.h"
 #include "launch.h"
 #include "deploy_sats.h"
+#include "mediators.h"
 
 TestBed::TestBed()
 {
@@ -39,33 +40,58 @@ bool TestBed::run()
     falcons[0] = f9->createFalcon(first9);
     falcons[1] = fH->createFalcon(firstH);
 
-    satellite **sats = new satellite *[NUMSATS];
+    vector<satellite *> sats;
+    vector<satellite *>::iterator satIt;
+    //satellite **sats = new satellite *[NUMSATS];
 
     for (int i = 0; i < NUMSATS; i++)
     {
-        sats[i] = satFactory->create_sat();
+        sats.push_back(satFactory->create_sat());
     }
 
     for (int i = 0; i < NUMSATS; i++)
     {
-        ls->execute(falcons[0], sats[i]);
+        ls->execute(falcons[0], sats.at(i));
     }
 
     la->execute(falcons[0], NULL);
-    //falcons[0]->launch_sequence();
     falcons[1]->launch_sequence();
 
     ds->execute(falcons[0], NULL);
 
-    if (sats[10]->getOrbit())
+    if (sats.at(10)->getOrbit())
     {
-        cout << "Satellite: " << sats[10]->getName() << " is in orbit" << endl;
+        cout << "Satellite: " << sats.at(10)->getName() << " is in orbit" << endl;
     }
     else
     {
-        cout << "Satellite: " << sats[10]->getName() << " is NOT in orbit" << endl;
+        cout << "Satellite: " << sats.at(10)->getName() << " is NOT in orbit" << endl;
     }
-    cout << "Status: " << sats[2]->getS0() << endl;
-    sats[10]->setSOandUpdate(false);
-    sats[10]->setSOandUpdate(true);
+    cout << "Status: " << sats.at(2)->getS0() << endl;
+    sats.at(10)->setSOandUpdate(false);
+    sats.at(10)->setSOandUpdate(true);
+
+    mediators mediatorStore;
+    mediatorStore.SetMed(med->createMemento());
+
+    cout << sats.at(0)->getName() << endl;
+
+    sats.at(0)->setName("bob");
+
+    cout << sats.at(0)->getName() << endl;
+    //sats.erase(sats.begin(), sats.end());
+    vector<satellite *> sats;
+
+    cout << sats.front()->getName() << endl;
+    cout << "HERE" << endl;
+    med->setMemento(mediatorStore.getMed());
+
+    Iterator *it = agg->createIterator();
+    while (!it->done())
+    {
+        sats.push_back(it->current());
+        it->next();
+    }
+
+    cout << sats.at(0)->getName() << endl;
 }

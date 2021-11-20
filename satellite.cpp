@@ -92,3 +92,8 @@ void satellite::workLoad(bool bIn)
         cout << "Satellite " + name + " decreased its workload" << endl;
     }
 }
+
+void satellite::setName(string s)
+{
+    this->name = s;
+}

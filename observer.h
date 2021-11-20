@@ -5,7 +5,9 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
 
-#include "Mediator.h"
+//#include "Mediator.h"
+
+class Mediator;
 
 class observer
 {

@@ -9,6 +9,7 @@
 #include "mediatorMemento.h"
 #include "vector"
 #include "aggregate.h"
+#include "satellite.h"
 
 using namespace std;
 

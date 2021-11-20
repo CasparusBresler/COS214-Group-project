@@ -7,7 +7,9 @@
 
 # include <string>
 #include "observer.h"
-#include "Mediator.h"
+//#include "Mediator.h"
+
+class Mediator;
 
 using namespace std;
 
@@ -32,6 +34,7 @@ public:
     observer* getObserv();
     satellite(string, Mediator*);
     void workLoad(bool);
+    void setName(string s);
 };
 
 

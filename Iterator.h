@@ -24,6 +24,7 @@ public:
     satellite *current();
     bool done();
     void update(bool);
+    vector<satellite *>getSats();
 };
 
 #endif //ITERATOR_H

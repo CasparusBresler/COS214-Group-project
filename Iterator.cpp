@@ -4,6 +4,7 @@
 
 #include "Iterator.h"
 #include "satellite.h"
+#include <iostream>
 
 Iterator::Iterator(vector<satellite *> s)
 {
@@ -13,18 +14,18 @@ Iterator::Iterator(vector<satellite *> s)
 
 satellite *Iterator::first()
 {
-    return satellites[0];
+    return satellites.at(0);
 }
 
 satellite *Iterator::current()
 {
-    return satellites[pos];
+    return satellites.at(pos);
 }
 
 satellite *Iterator::next()
 {
     pos++;
-    return satellites[pos];
+    return satellites.at(pos);
 }
 
 bool Iterator::done()
@@ -43,4 +44,9 @@ void Iterator::update(bool tf)
 {
     this->current()->workLoad(tf);
     //this->current()->setSO(tf);
+}
+
+vector<satellite *>Iterator::getSats()
+{
+    return this->satellites;
 }

@@ -18,3 +18,9 @@ void aggregate::addSat(satellite *s)
 aggregate::aggregate()
 {
 }
+
+aggregate *aggregate::clone()
+{
+    aggregate *tempAgg = new aggregate();
+    Iterator *it = createIterator();
+}
