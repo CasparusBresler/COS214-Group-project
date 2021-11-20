@@ -15,3 +15,5 @@ Missign doxygen:
 
   The whole ass falcon_command class
   The whole ass falcon_factory class
+  
+  mediator aggregate* getAggregate();
