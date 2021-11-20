@@ -1,6 +1,21 @@
-#include <iostream>
+#include "Simulation.h"
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+int main()
+{
+    Simulation* simulation = new Simulation();
+    simulation->run();
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

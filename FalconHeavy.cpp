@@ -3,9 +3,10 @@
 #include <iostream>
 #include "FalconHeavy.h"
 
-FalconHeavy::FalconHeavy(FirstStageRocket* fsr)
+FalconHeavy::FalconHeavy(FirstStageRocket *fsr)
 {
     firstStageRocket = fsr;
+    satCount = 0;
 }
 
 FalconHeavy::~FalconHeavy()
@@ -18,6 +19,7 @@ void FalconHeavy::launch_sequence()
     fire1();
     firstStageRocket == nullptr;
     cout << "Stage 1 detached" << endl;
+    cout << "First Stage Rocket landed, and recovered succesfully" << endl;
     fire2();
     cout << "Orbit reached" << endl;
     deploy();
@@ -25,7 +27,6 @@ void FalconHeavy::launch_sequence()
 
 void FalconHeavy::fire1()
 {
-    //cout << "27 Merlin Engines on all 3 cores fired successfully" << endl;
     firstStageRocket->fire();
 }
 
@@ -36,20 +37,37 @@ void FalconHeavy::fire2()
 
 void FalconHeavy::load_sat(satellite *s)
 {
-    satellites.push_back(s);
+    if (satCount < 60)
+    {
+        cout << s->getName() << " loaded into Falcon Heavy rocket" << endl;
+        satellites.push_back(s);
+        satCount++;
+    }
+    else
+    {
+        cout << "No more space for satellites" << endl;
+    }
 }
 
 void FalconHeavy::deploy()
 {
-    int count = 0;
-    cout << "Deploying satellites" << endl;
-    vector<satellite *>::iterator it;
-    for (it = satellites.begin(); it != satellites.end(); ++it)
+    if (satellites.size() > 0)
     {
-        (*it)->setOrbit(true);
-        (*it)->setSO(true);
-        satellites.erase(it);
-        count++;
+        int count = 0;
+        cout << "Deploying satellites" << endl;
+        vector<satellite *>::iterator it;
+        it = satellites.begin();
+        while (it != satellites.end())
+        {
+            (*it)->setOrbit(true);
+            (*it)->setSO(true);
+            satellites.erase(it);
+            count++;
+        }
+        cout << count << " satellites deployed successfully" << endl;
     }
-    cout << count << " satellites deployed successfully" << endl;
+    else
+    {
+        cout << "There are no satellites to deploy" << endl;
+    }
 }

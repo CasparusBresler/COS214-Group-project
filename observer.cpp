@@ -3,6 +3,7 @@
 //
 
 #include "observer.h"
+#include "Mediator.h"
 
 observer::observer(Mediator *m)
 {

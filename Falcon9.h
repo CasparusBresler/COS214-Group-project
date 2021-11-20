@@ -11,6 +11,7 @@ using namespace std;
 class Falcon9 : public strategy
 {
 private:
+    int satCount;
     vector<satellite *> satellites;
     FirstStageRocket* firstStageRocket;
 public:

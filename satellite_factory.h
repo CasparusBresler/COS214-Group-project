@@ -13,12 +13,14 @@
 class satellite_factory
 {
 private:
-    int counter;
     aggregate* agg;
     Mediator* med;
+    int counter;
 public:
     satellite_factory(aggregate*, Mediator*);
     satellite* create_sat();
+    void setcounter(int);
+
 
 };
 

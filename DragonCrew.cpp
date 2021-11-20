@@ -10,6 +10,7 @@ using namespace std;
 
 DragonCrew::DragonCrew(ISS* dest) : dragon_template()
 {
+    docked = false;
     size = 12;
     loaded = 0;
     this->destination = dest;
@@ -48,10 +49,12 @@ void DragonCrew::loadIn(storage* item)
 }
 void DragonCrew::unload()
 {
-    for(int i = 0; i< 7 ; i++)
+    while(!passengers.empty())
     {
-        destination->getCrew().push_back(passengers[i]);
-        passengers[i] = nullptr;
+        vector<crew*> temp = destination->getCrew();
+        temp.push_back(passengers.back());
+        destination->setCrew(temp);
+        passengers.pop_back();
         loaded--;
     }
 }

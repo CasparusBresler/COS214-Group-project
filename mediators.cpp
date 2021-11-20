@@ -3,3 +3,21 @@
 //
 
 #include "mediators.h"
+
+mediators::mediators()
+{
+}
+
+mediators::~mediators()
+{
+}
+
+void mediators::SetMed(mediatorMemento *m)
+{
+    this->m = m;
+}
+
+mediatorMemento *mediators::getMed()
+{
+    return this->m;
+}

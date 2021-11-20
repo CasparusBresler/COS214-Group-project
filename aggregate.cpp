@@ -4,13 +4,23 @@
 
 #include "aggregate.h"
 
-Iterator * aggregate::createIterator()
+Iterator *aggregate::createIterator()
 {
-    Iterator* temp = new Iterator(satellites);
+    Iterator *temp = new Iterator(satellites);
     return temp;
 }
 
 void aggregate::addSat(satellite *s)
 {
     satellites.push_back(s);
+}
+
+aggregate::aggregate()
+{
+}
+
+aggregate *aggregate::clone()
+{
+    aggregate *tempAgg = new aggregate();
+    Iterator *it = createIterator();
 }

@@ -5,11 +5,11 @@
 #ifndef MEDIATOR_H
 #define MEDIATOR_H
 
-
 #include "Iterator.h"
 #include "mediatorMemento.h"
 #include "vector"
 #include "aggregate.h"
+#include "satellite.h"
 
 using namespace std;
 
@@ -18,19 +18,16 @@ class observer;
 class Mediator
 {
 private:
-    aggregate* satellites;
-    Iterator* it;
+    aggregate *satellites;
+    Iterator *it;
 
 public:
-    Mediator(aggregate* a);
+    Mediator(aggregate *a);
     void warnOthers(bool tf);
-    void setMemento(mediatorMemento* m);
-    mediatorMemento* createMemento();
-
-
-
+    void setMemento(mediatorMemento *m);
+    mediatorMemento *createMemento();
+    aggregate* getAggregate();
 
 };
-
 
 #endif //MEDIATOR_H

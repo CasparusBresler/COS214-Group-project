@@ -15,7 +15,6 @@ class launch2 : public DragonCommand
 {
 private:
 public:
-
     launch2();
     ~launch2();
     void execute(dragon_template* , storage*) override;

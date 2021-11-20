@@ -5,7 +5,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-#include "Vector"
+#include <vector>
 
 class satellite;
 
@@ -14,17 +14,17 @@ using namespace std;
 class Iterator
 {
 private:
-    vector<satellite*> satellites;
+    vector<satellite *> satellites;
     int pos;
+
 public:
-    Iterator(vector<satellite*>);
-    satellite* first();
-    satellite* next();
-    satellite* current();
+    Iterator(vector<satellite *>);
+    satellite *first();
+    satellite *next();
+    satellite *current();
     bool done();
     void update(bool);
-
+    vector<satellite *>getSats();
 };
-
 
 #endif //ITERATOR_H

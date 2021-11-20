@@ -19,16 +19,20 @@ private:
     docked_state *state;
 
 public:
-    ISS(/* args */);
+    ISS();
     ~ISS();
     void setMemento(ISSMemento *m);
     ISSMemento *createMemento();
     void setState(docked_state *state);
     void changeState();
-    vector<cargo*> getCargo();
-    vector<crew*> getCrew();
+    vector<cargo *> getCargo();
+    vector<crew *> getCrew();
 
     docked_state *getDockedState();
+
+    void setCrew(vector<crew *> vector);
+
+    void setCargo(vector<cargo *> vector);
 };
 
 #endif // __ISS_H__
