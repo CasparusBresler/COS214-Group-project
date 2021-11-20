@@ -4,18 +4,30 @@
 
 #include "mediatorMemento.h"
 
-mediatorMemento::mediatorMemento(aggregate * i , Iterator* o)
+mediatorMemento::mediatorMemento(int s, vector<string> n, vector<bool> o, vector<bool> OS)
 {
-    satellites = i;
-    it = o;
+    this->size = s;
+    this->names = n;
+    this->orbits = o;
+    this->OS = OS;
 }
 
-aggregate * mediatorMemento::getSatellites()
+int mediatorMemento::getSize()
 {
-    return satellites;
+    return this->size;
 }
 
-Iterator* mediatorMemento::getIT()
+vector<string> mediatorMemento::getNames()
 {
-    return it;
+    return this->names;
+}
+
+vector<bool> mediatorMemento::getOrbits()
+{
+    return this->orbits;
+}
+
+vector<bool> mediatorMemento::getOStatus()
+{
+    return this->OS;
 }

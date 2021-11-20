@@ -5,25 +5,28 @@
 #ifndef UNTITLED23_MEDIATORMEMENTO_H
 #define UNTITLED23_MEDIATORMEMENTO_H
 
-
 #include "Iterator.h"
 #include "aggregate.h"
+#include <string>
 
 class observer;
 
 class mediatorMemento
 {
 private:
-    aggregate* satellites;
-    Iterator* it;
+    int size;
+    vector<string> names;
+    vector<bool> orbits;
+    vector<bool> OS;
+    // aggregate *satellites;
+    // Iterator *it;
+
 public:
-
-    mediatorMemento(aggregate*, Iterator*);
-    aggregate* getSatellites();
-    Iterator* getIT();
-
-
+    mediatorMemento(int s, vector<string> n, vector<bool> o, vector<bool> OS);
+    int getSize();
+    vector<string> getNames();
+    vector<bool> getOrbits();
+    vector<bool> getOStatus();
 };
-
 
 #endif //UNTITLED23_MEDIATORMEMENTO_H

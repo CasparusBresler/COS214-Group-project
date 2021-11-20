@@ -11,13 +11,13 @@
 class aggregate
 {
 private:
-    vector<satellite*> satellites;
+    vector<satellite *> satellites;
+
 public:
     aggregate();
-    Iterator* createIterator();
-    void addSat(satellite*);
-
-
+    Iterator *createIterator();
+    void addSat(satellite *);
+    aggregate *clone();
 };
 
 

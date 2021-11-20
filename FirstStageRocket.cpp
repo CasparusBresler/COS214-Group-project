@@ -16,5 +16,5 @@ FirstStageRocket::~FirstStageRocket() {}
 
 void FirstStageRocket::fire()
 {
-    cout << "Firing " << amount << " Merlin Engine" << endl;
+    cout << amount << " Merlin Engines fired successfully" << endl;
 }

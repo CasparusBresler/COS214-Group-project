@@ -5,15 +5,19 @@
 #ifndef MEDIATORS_H
 #define MEDIATORS_H
 
-
 #include "mediatorMemento.h"
 
 class mediators
 {
+private:
+    mediatorMemento *m;
+
 public:
-    mediatorMemento* mediator;
-
+    mediators();
+    ~mediators();
+    void SetMed(mediatorMemento *m);
+    mediatorMemento *getMed();
+    
 };
-
 
 #endif //UNTITLED23_MEDIATORS_H

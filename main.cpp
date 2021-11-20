@@ -1,4 +1,7 @@
+#define TESTING
+
 #include <iostream>
+
 #include <string>
 #include "dragon_factory.h"
 #include "dragon_template.h"
@@ -84,6 +87,7 @@ int main() {
 
     unload_command->execute(dragonCrew, nullptr);
     */
+
 
 
 
