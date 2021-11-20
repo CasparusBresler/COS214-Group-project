@@ -9,7 +9,9 @@
 #include "aggregate.h"
 #include "Mediator.h"
 #include "satellite.h"
-
+/// This is the factory class for satellites.
+///
+/// It has as an integer counter, an object of type aggregate and an object of type Mediator as a private member
 class satellite_factory
 {
 private:
@@ -17,7 +19,15 @@ private:
     aggregate* agg;
     Mediator* med;
 public:
-    satellite_factory(aggregate*, Mediator*);
+///This is the satellite_factory constructor.
+///
+///@param a is an object of type aggregate
+///@param m is an object of type Mediator
+    satellite_factory(aggregate* a, Mediator* m);
+
+///This is the create_sat function.
+///
+///@return an object of type satellite
     satellite* create_sat();
 
 };

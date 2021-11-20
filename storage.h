@@ -10,7 +10,14 @@ class storage
 private:
 
 public:
+    /// This is the storage Constructor.
+    ///
+    /// 
     storage();
+
+    /// This is the storage deconstructor.
+    ///
+    /// 
     ~storage();
 };
 
