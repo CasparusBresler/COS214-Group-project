@@ -13,15 +13,15 @@ using namespace std;
 class ISSMemento
 {
 private:
-    vector<crew*> crewmembers;
-    vector<cargo*> cargohold;
+    vector<string> crewmembers;
+    vector<string> cargohold;
     docked_state* state;
 
 public:
     ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state* ds);
     ~ISSMemento();
-    vector<crew*> getcrew();
-    vector<cargo*> getcargo();
+    vector<string> getcrew();
+    vector<string> getcargo();
     docked_state* getState();
 };
 #endif // __ISSMEMENTO_H__

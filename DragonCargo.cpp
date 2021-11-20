@@ -48,7 +48,9 @@ void DragonCargo::unload()
 {
     while(!cargoHold.empty())
     {
-        destination->getCargo().push_back(cargoHold.back());
+        vector<cargo*> temp = destination->getCargo();
+        temp.push_back(cargoHold.back());
+        destination->setCargo(temp);
         cargoHold.pop_back();
         loaded--;
     }

@@ -1,6 +1,8 @@
 //Daniel de Nobrega
 
+#include <iostream>
 #include "undocked.h"
+using namespace std;
 
 undocked::undocked(/* args */) {}
 
@@ -15,6 +17,7 @@ docked_state* undocked::changestate()
 
 bool undocked::getstate()
 {
+
     return false;
 }
 
