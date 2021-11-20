@@ -10,7 +10,7 @@
 #include "storage.h"
 using namespace std;
 
-class DragonCommand : public dragon_template
+class DragonCommand
 {
 private:
 public:

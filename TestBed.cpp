@@ -1,97 +1,158 @@
-#include "TestBed.h"
-#include <vector>
-#include "aggregate.h"
+
+#include <iostream>
+#include <string>
+#include "dragon_factory.h"
+#include "dragon_template.h"
+#include "storage.h"
+#include "DragonCommand.h"
+#include "dragonCargo_factory.h"
+#include "dragonCrew_factory.h"
 #include "ISS.h"
-#include "satellite_factory.h"
-#include "load_sats.h"
-#include "launch.h"
-#include "deploy_sats.h"
-#include "mediators.h"
+#include "DragonCargo.h"
+#include "rocket.h"
+#include "launch2.h"
+#include "load.h"
+#include "attach.h"
+#include "detach.h"
+#include "unload.h"
+#include "storage.h"
+#include "docked_state.h"
+#include "undocked.h"
+#include "docked.h"
+#include "ISSMemento.h"
 
-TestBed::TestBed()
-{
+void TestIss();
+
+using namespace std;
+int main() {
+    ISS* iss = new ISS();
+    docked_state* ds = new undocked();
+    iss->setState(ds);
+    //cout<<iss->getDockedState()->getstate()<<endl;
+    dragon_factory* factory[2];
+    factory[0] = new dragonCargo_factory();
+    factory[1] = new dragonCrew_factory();
+    dragon_template** rockets = new dragon_template*[2];
+    rockets[0] = factory[0]->createDragon(iss);
+    rockets[1] = factory[1]->createDragon(iss);
+
+    storage *storage[2];
+    storage[0] = new cargo("Food for ISS");
+    storage[1] = new cargo("Blankets for ISS");
+
+
+
+    //Creating the commands
+     DragonCommand* loadCommand = new  load();
+    DragonCommand* unloadCommand = new unload();
+     DragonCommand* attachCommand = new attach();
+     DragonCommand* detachCommand = new detach();
+     DragonCommand* launchCommand = new launch2();
+
+    cout<<"Loading to Dragon Cargo rocket"<< endl;
+    loadCommand->execute(rockets[0],*storage);
+    cout<<"Launching the Dragon Cargo Rocket"<< endl;
+    launchCommand->execute(rockets[0], *storage);
+    cout<<"The Dragon Cargo is in space and is now attching to the ISS"<<endl;
+    attachCommand->execute(rockets[0],*storage);
+    cout<<"The Dragon Cargo is attched and is now un loading all its cargo"<<endl;
+    unloadCommand->execute(rockets[0],*storage);
+    cout<<"Inside ISS"<<endl;
+    cout<<"The Dragon Cargo is fully unloaded and is now heading back down to earth"<<endl;
+    detachCommand->execute(rockets[0],*storage);
+
+
+    storage[0] = new crew("Bob");
+    storage[1] = new crew("Frank");
+
+    cout<<"Crew is entering Dragon"<< endl;
+    loadCommand->execute(rockets[0],*storage);
+    cout<<"Launching the Dragon Crew Rocket"<< endl;
+    launchCommand->execute(rockets[0], *storage);
+    cout<<"The Dragon Crew is in space and is now attching to the ISS"<<endl;
+    attachCommand->execute(rockets[0],*storage);
+    cout<<"The Dragon Cargo is attched and the crew is going in the ISS"<<endl;
+    unloadCommand->execute(rockets[0],*storage);
+    cout<<"The Dragon Cargo is fully unloaded and is now heading back down to earth"<<endl;
+    detachCommand->execute(rockets[0],*storage);
+
+
+    delete iss;
+    //elete ds;
+    for (int i = 0; i<2;i++)
+    {
+        delete factory[i];
+    }
+    for (int i = 0; i<2;i++)
+    {
+        delete storage[i];
+    }
+    for (int i = 0; i<2;i++)
+    {
+        delete rockets[i];
+    }
+
+    TestIss();
+    return 0;
 }
 
-TestBed::~TestBed()
-{
+void TestIss() {
+    ISS* iss = new ISS();
+    docked_state* ds = new undocked();
+    iss->setState(ds);
+    dragon_factory* factory;
+    factory = new dragonCargo_factory();
+
+    dragon_template** rockets = new dragon_template*[2];
+    rockets[0] = factory->createDragon(iss);
+
+    storage *storage[2];
+    storage[0] = new cargo("Food for ISS");
+    storage[1] = new cargo("Blankets for ISS");
+
+
+
+    //Creating the commands
+    DragonCommand* loadCommand = new  load();
+    DragonCommand* unloadCommand = new unload();
+    DragonCommand* attachCommand = new attach();
+    DragonCommand* detachCommand = new detach();
+    DragonCommand* launchCommand = new launch2();
+
+    cout<<"Loading to Dragon Cargo rocket"<< endl;
+    loadCommand->execute(rockets[0],*storage);
+    cout<<"Launching the Dragon Cargo Rocket"<< endl;
+    launchCommand->execute(rockets[0], *storage);
+    cout<<"The Dragon Cargo is in space and is now attching to the ISS"<<endl;
+    attachCommand->execute(rockets[0],*storage);
+    cout<<"The Dragon Cargo is attched and is now un loading all its cargo"<<endl;
+    unloadCommand->execute(rockets[0],*storage);
+    cout<<"Inside ISS"<<endl;
+    ISSMemento* memento = iss->createMemento();
+    cout<<"Memento created"<<endl;
+    iss->setMemento(memento);
+    //cout << "hello" << endl;
+
+    //cout<<"The Dragon Cargo is fully unloaded and is now heading back down to earth"<<endl;
+    //detachCommand->execute(rockets[0],*storage);
+   // delete memento;
+   // delete iss;
+   // delete ds;
+
+//        delete factory;
+//
+//    for (int i = 0; i<2;i++)
+//    {
+//        delete storage[i];
+//    }
+//    for (int i = 0; i<2;i++)
+//    {
+//        delete rockets[i];
+//    }
+
 }
 
-bool TestBed::run()
-{
-#define NUMSATS 60
-#define NUMFALCONS 2
 
-    aggregate *agg = new aggregate();
-    Mediator *med = new Mediator(agg);
 
-    falcon_command *ls = new load_sats();   // the load sats command
-    falcon_command *ds = new deploy_sats(); // the deploy sats command
-    falcon_command *la = new launch();      // the launch command
 
-    FirstStageRocket *first9 = new FirstStageRocket(9);
-    FirstStageRocket *firstH = new FirstStageRocket(27);
-    falcon9_factory *f9 = new falcon9_factory();
-    falconHeavy_factory *fH = new falconHeavy_factory();
 
-    strategy **falcons = new strategy *[NUMFALCONS];
-
-    satellite_factory *satFactory = new satellite_factory(agg, med);
-
-    falcons[0] = f9->createFalcon(first9);
-    falcons[1] = fH->createFalcon(firstH);
-
-    vector<satellite *> sats;
-    vector<satellite *>::iterator satIt;
-    //satellite **sats = new satellite *[NUMSATS];
-
-    for (int i = 0; i < NUMSATS; i++)
-    {
-        sats.push_back(satFactory->create_sat());
-    }
-
-    for (int i = 0; i < NUMSATS; i++)
-    {
-        ls->execute(falcons[0], sats.at(i));
-    }
-
-    la->execute(falcons[0], NULL);
-    falcons[1]->launch_sequence();
-
-    ds->execute(falcons[0], NULL);
-
-    if (sats.at(10)->getOrbit())
-    {
-        cout << "Satellite: " << sats.at(10)->getName() << " is in orbit" << endl;
-    }
-    else
-    {
-        cout << "Satellite: " << sats.at(10)->getName() << " is NOT in orbit" << endl;
-    }
-    cout << "Status: " << sats.at(2)->getS0() << endl;
-    sats.at(10)->setSOandUpdate(false);
-    sats.at(10)->setSOandUpdate(true);
-
-    mediators mediatorStore;
-    mediatorStore.SetMed(med->createMemento());
-
-    cout << sats.at(0)->getName() << endl;
-
-    sats.at(0)->setName("bob");
-
-    cout << sats.at(0)->getName() << endl;
-    //sats.erase(sats.begin(), sats.end());
-    vector<satellite *> sats;
-
-    cout << sats.front()->getName() << endl;
-    cout << "HERE" << endl;
-    med->setMemento(mediatorStore.getMed());
-
-    Iterator *it = agg->createIterator();
-    while (!it->done())
-    {
-        sats.push_back(it->current());
-        it->next();
-    }
-
-    cout << sats.at(0)->getName() << endl;
-}

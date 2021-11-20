@@ -29,6 +29,10 @@ public:
     vector<crew *> getCrew();
 
     docked_state *getDockedState();
+
+    void setCrew(vector<crew *> vector);
+
+    void setCargo(vector<cargo *> vector);
 };
 
 #endif // __ISS_H__

@@ -15,7 +15,8 @@ private:
 public:
     dragonCargo_factory();
     ~dragonCargo_factory();
-    dragon_template *createDragon(ISS*);
+    dragon_template *createDragon(ISS*) override;
+
 };
 
 #endif // __DRAGONCARGO_FACTORY_H__
