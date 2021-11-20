@@ -8,18 +8,48 @@
 
 #include "dragon_template.h"
 #include "storage.h"
+
 using namespace std;
+
+/**
+ * @brief DragonCommand class, inherited from dragon_template
+ * Uses the Template method design pattern as well as the Command design pattern
+ */
 
 class DragonCommand
 {
 private:
 public:
+    
+     /**
+     * @brief Construct a new Dragon Command object
+     * Constructor for DragonCommand class
+     * 
+     * @return nothing
+     */
     DragonCommand();
+    
+     /**
+     * @brief Destroy the Dragon Command object
+     * Destructor for DragonCommand class
+     * 
+     * @return nothing
+     */
     ~DragonCommand();
-    virtual void execute(dragon_template* , storage*)=0;
-
-
-
+    
+    /**
+     * @brief virtual execute function for dragonCommand
+     * Implemented in subclasses
+     * @param dt
+     * @param s
+     * 
+     * @return nothing
+     * @see attach class
+     * @see dragon_template class
+     * @see detach class
+     * @see attach class
+     */
+    virtual void execute(dragon_template* , storage*) = 0;
 };
 
 #endif // DRAGONCOMMAND_H
