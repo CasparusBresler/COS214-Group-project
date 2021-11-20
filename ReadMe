@@ -8,4 +8,7 @@ Missign doxygen:
   mediators void SetMed(mediatorMemento *m);
   mediators mediatorMemento *getMed();
 
-  vector<satellite *>getSats();
+  Itertator vector<satellite *>getSats();
+  
+  mediatorMemento vector<bool> getOrbits();
+  mediatorMemento vector<bool> getOStatus();
