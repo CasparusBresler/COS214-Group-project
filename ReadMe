@@ -1,2 +1,8 @@
 Missign doxygen:
-satellite set_counter(int)
+
+  satellite_factory set_counter(int)
+  
+  satellite void workLoad(bool);
+  satellite void setName(string s);
+
+
