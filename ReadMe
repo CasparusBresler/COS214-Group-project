@@ -14,3 +14,4 @@ Missign doxygen:
   mediatorMemento vector<bool> getOStatus();
 
   The whole ass falcon_command class
+  The whole ass falcon_factory class
