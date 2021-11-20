@@ -11,8 +11,19 @@ class FirstStageRocket
 private:
     int amount;
 public:
-    FirstStageRocket(int);
+/// This is the FalconHeavy Constructor.
+/// 
+///@param i is the amount of fuel in the rocket
+    FirstStageRocket(int i);
+    
+/// This is the FirstStageRocket deconstructor
+/// 
+///
     ~FirstStageRocket();
+    
+/// This is the fire function
+/// 
+///
     void fire();
 };
 
