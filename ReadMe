@@ -12,3 +12,5 @@ Missign doxygen:
   
   mediatorMemento vector<bool> getOrbits();
   mediatorMemento vector<bool> getOStatus();
+
+  The whole ass falcon_command class
