@@ -18,9 +18,9 @@ Missign doxygen:
   
   mediator aggregate* getAggregate();
   
-  aggregate* clone() in Aggregate
+
   
- 
+  checkifspace() function in dragon_template
   
   ISS: setCrew and setCargo
  
