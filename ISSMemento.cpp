@@ -13,11 +13,6 @@ ISSMemento::ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state*
         crewV.pop_back();
     }
 
-    for(int i = 0; i < tempnames.size(); i++)
-    {
-        crewV.push_back(tempnames.back());
-        tempnames.pop_back();
-    }
 
     vector<cargo*> tempcnames;
     for(int i = 0; i < cargoV.size(); i++)
@@ -28,11 +23,6 @@ ISSMemento::ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state*
         cargoV.pop_back();
     }
 
-    for(int i = 0; i < tempcnames.size(); i++)
-    {
-        cargoV.push_back(tempcnames.back());
-        tempcnames.pop_back();
-    }
 
     this->state = ds->clone();
 }

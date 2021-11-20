@@ -11,7 +11,10 @@ ISS::~ISS() {}
 
 void ISS::setMemento(ISSMemento *m)
 {
-//    cout <<"hello" <<endl;
+    crewmembers.clear();
+    cargohold.clear();
+    state= nullptr;
+
     vector<string> tempnames;
     for(int i = 0; i < m->getcrew().size(); i++)
     {
@@ -21,15 +24,12 @@ void ISS::setMemento(ISSMemento *m)
         m->getcrew().pop_back();
     }
 
-//    cout << "hello" << endl;
 
     for(int i = 0; i < tempnames.size(); i++)
     {
         m->getcrew().push_back(tempnames.back());
         tempnames.pop_back();
     }
-
-//    cout << "hello" << endl;
 
     vector<string> tempcnames;
     for(int i = 0; i < m->getcargo().size(); i++)
@@ -40,7 +40,7 @@ void ISS::setMemento(ISSMemento *m)
         m->getcargo().pop_back();
     }
 
-//    cout << "hello" << endl;
+
 
     for(int i = 0; i < tempcnames.size(); i++)
     {
@@ -48,10 +48,10 @@ void ISS::setMemento(ISSMemento *m)
         tempcnames.pop_back();
     }
 
-//    cout << "hello" << endl;
+
 
     state = m->getState()->clone();
-    //cout << "hello" << endl;
+
 }
 
 ISSMemento* ISS::createMemento()
@@ -83,4 +83,14 @@ vector<crew *> ISS::getCrew()
 docked_state *ISS::getDockedState()
 {
     return state;
+}
+
+void ISS::setCrew(vector<crew *> vector)
+{
+    crewmembers=vector;
+}
+
+void ISS::setCargo(vector<cargo *> vector)
+{
+    cargohold=vector;
 }

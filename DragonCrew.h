@@ -17,7 +17,6 @@ class DragonCrew : public dragon_template
 private:
     int size;
     int loaded;
-    vector<crew*> passengers;
     ISS* destination;
 public:
     DragonCrew(ISS*);
@@ -28,6 +27,7 @@ public:
     void launch() override;
     ISS* getDest() override;
 
+    vector<crew*> passengers;
 };
 
 #endif // __DRAGONCREW_H__

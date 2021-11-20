@@ -15,6 +15,7 @@ class dragon_template
 private:
 
 public:
+    bool docked = false;
     dragon_template();
     ~dragon_template();
     virtual bool checkIfSpace()=0;

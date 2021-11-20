@@ -25,11 +25,13 @@ void attach::execute(dragon_template* r , storage* s)
         docked_state *temp =  r->getDest()->getDockedState();
         r->getDest()->setState(r->getDest()->getDockedState()->changestate());
         delete temp;
+        r->docked = true;
 
     }
     else
     {
         cout << "Cannot dock as dock is currently taken" << endl;
+        r->docked = false;
     }
 
 
