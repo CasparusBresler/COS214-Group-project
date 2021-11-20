@@ -17,7 +17,6 @@ private:
 public:
     dragon_template();
     ~dragon_template();
-    void load(storage* s);
     virtual bool checkIfSpace()=0;
     virtual void loadIn(storage*)=0;
     virtual void unload()=0;

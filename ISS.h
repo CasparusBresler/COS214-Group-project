@@ -19,7 +19,7 @@ private:
     docked_state *state;
 
 public:
-    ISS(/* args */);
+    ISS();
     ~ISS();
     void setMemento(ISSMemento *m);
     ISSMemento *createMemento();

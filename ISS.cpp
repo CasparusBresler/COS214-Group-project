@@ -1,25 +1,57 @@
 //Daniel de Nobrega
 
+#include <iostream>
 #include "ISS.h"
-ISS::ISS(/* args */) {}
+ISS::ISS()
+{
+
+}
 
 ISS::~ISS() {}
 
 void ISS::setMemento(ISSMemento *m)
 {
-    vector<crew *>::iterator itCrew;
-    for (itCrew = m->getcrew().begin(); itCrew != m->getcrew().end(); ++itCrew)
+//    cout <<"hello" <<endl;
+    vector<string> tempnames;
+    for(int i = 0; i < m->getcrew().size(); i++)
     {
-        crewmembers.push_back((*itCrew)->clone());
+        crew* tempc = new crew(m->getcrew().back());
+        crewmembers.push_back(tempc);
+        tempnames.push_back(m->getcrew().back());
+        m->getcrew().pop_back();
     }
 
-    vector<cargo *>::iterator itCargo;
-    for (itCargo = m->getcargo().begin(); itCargo != m->getcargo().end(); ++itCargo)
+//    cout << "hello" << endl;
+
+    for(int i = 0; i < tempnames.size(); i++)
     {
-        cargohold.push_back((*itCargo)->clone());
+        m->getcrew().push_back(tempnames.back());
+        tempnames.pop_back();
     }
 
-    this->state = m->getState()->clone();
+//    cout << "hello" << endl;
+
+    vector<string> tempcnames;
+    for(int i = 0; i < m->getcargo().size(); i++)
+    {
+        cargo* tempca = new cargo(m->getcargo().back());
+        cargohold.push_back(tempca);
+        tempcnames.push_back(m->getcargo().back());
+        m->getcargo().pop_back();
+    }
+
+//    cout << "hello" << endl;
+
+    for(int i = 0; i < tempcnames.size(); i++)
+    {
+        m->getcargo().push_back(tempcnames.back());
+        tempcnames.pop_back();
+    }
+
+//    cout << "hello" << endl;
+
+    state = m->getState()->clone();
+    //cout << "hello" << endl;
 }
 
 ISSMemento* ISS::createMemento()
@@ -30,7 +62,6 @@ ISSMemento* ISS::createMemento()
 
 void ISS::setState(docked_state *state)
 {
-    delete this->state;
     this->state = state;
 }
 

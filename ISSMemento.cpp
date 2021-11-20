@@ -1,18 +1,37 @@
 
 #include "ISSMemento.h"
 
+
 ISSMemento::ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state* ds)
 {
-    vector<crew *>::iterator itCrew;
-    for (itCrew = crewV.begin(); itCrew != crewV.end(); ++itCrew)
+    vector<crew*> tempnames;
+    for(int i = 0; i < crewV.size(); i++)
     {
-        crewmembers.push_back((*itCrew)->clone());
+        string tempc = crewV.back()->getName();
+        crewmembers.push_back(tempc);
+        tempnames.push_back(crewV.back());
+        crewV.pop_back();
     }
 
-    vector<cargo *>::iterator itCargo;
-    for (itCargo = cargoV.begin(); itCargo != cargoV.end(); ++itCargo)
+    for(int i = 0; i < tempnames.size(); i++)
     {
-        cargohold.push_back((*itCargo)->clone());
+        crewV.push_back(tempnames.back());
+        tempnames.pop_back();
+    }
+
+    vector<cargo*> tempcnames;
+    for(int i = 0; i < cargoV.size(); i++)
+    {
+        string tempca = cargoV.back()->getName();
+        cargohold.push_back(tempca);
+        tempcnames.push_back(cargoV.back());
+        cargoV.pop_back();
+    }
+
+    for(int i = 0; i < tempcnames.size(); i++)
+    {
+        cargoV.push_back(tempcnames.back());
+        tempcnames.pop_back();
     }
 
     this->state = ds->clone();
@@ -28,12 +47,12 @@ docked_state* ISSMemento::getState()
     return state;
 }
 
-vector<crew*> ISSMemento::getcrew()
+vector<string> ISSMemento::getcrew()
 {
     return crewmembers;
 }
 
-vector<cargo*> ISSMemento::getcargo()
+vector<string> ISSMemento::getcargo()
 {
     return cargohold;
 }

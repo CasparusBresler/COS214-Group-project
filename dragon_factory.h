@@ -14,7 +14,7 @@ private:
 public:
     dragon_factory();
     ~dragon_factory();
-    virtual dragon_template *createDragon() = 0;
+    virtual dragon_template *createDragon(ISS*) = 0;
 };
 
 #endif // __DRAGON_FACTORY_H__

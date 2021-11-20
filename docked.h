@@ -15,8 +15,8 @@ private:
 public:
     docked(/* args */);
     ~docked();
-    docked_state* changestate();
-    bool getstate();
-    docked_state* clone();
+    docked_state* changestate() override;
+    bool getstate() override;
+    docked_state* clone() override;
 };
 #endif // __DOCKED_H__

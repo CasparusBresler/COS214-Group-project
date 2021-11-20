@@ -16,8 +16,8 @@ private:
 public:
     undocked(/* args */);
     ~undocked();
-    docked_state* changestate();
-    bool getstate();
-    docked_state* clone();
+    docked_state* changestate() override;
+    bool getstate() override;
+    docked_state* clone() override;
 };
 #endif // __UNDOCKED_H__
