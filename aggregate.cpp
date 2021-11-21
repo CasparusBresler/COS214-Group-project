@@ -23,4 +23,5 @@ aggregate *aggregate::clone()
 {
     aggregate *tempAgg = new aggregate();
     Iterator *it = createIterator();
+    return nullptr;
 }
