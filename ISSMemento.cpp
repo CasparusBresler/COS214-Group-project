@@ -5,9 +5,12 @@
 ISSMemento::ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state* ds)
 {
     vector<crew*> tempnames;
-    for(int i = 0; i < crewV.size(); i++)
+    int csize = crewV.size();
+    for(int i = 0; i < csize; i++)
     {
+        cout << crewV.size() << endl;
         string tempc = crewV.back()->getName();
+        cout << crewV.back()->getName() << endl;
         crewmembers.push_back(tempc);
         tempnames.push_back(crewV.back());
         crewV.pop_back();
@@ -15,7 +18,8 @@ ISSMemento::ISSMemento(vector<crew*> crewV, vector<cargo*> cargoV, docked_state*
 
 
     vector<cargo*> tempcnames;
-    for(int i = 0; i < cargoV.size(); i++)
+    csize = cargoV.size();
+    for(int i = 0; i < csize; i++)
     {
         string tempca = cargoV.back()->getName();
         cargohold.push_back(tempca);
