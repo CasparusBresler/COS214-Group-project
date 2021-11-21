@@ -1,25 +1,15 @@
-Missign doxygen:
+To compile use either CMakeList or makefile depending on your ide.
+Once Program has begun, follow prompts.
+e.g
+---------------------------------------------------------------------
+Please select an option
+1 -- View Crew
+2 -- View Cargo
+---------------------------------------------------------------------
 
+type either 1 or 2 into the console to choose the respective option
 
-  satellite_factory set_counter(int)
-  
-  satellite void workLoad(bool);
-  satellite void setName(string s);
+DO NOT enter a letter or symbol value.
 
-  mediators void SetMed(mediatorMemento *m);
-  mediators mediatorMemento *getMed();
+when asked for a string, use underscores(_) rather than spaces.
 
-  Itertator vector<satellite *>getSats();
-  
-  mediatorMemento vector<bool> getOrbits();
-  mediatorMemento vector<bool> getOStatus();
-
-  The whole ass falcon_command class
-  The whole ass falcon_factory class
-  
-  mediator aggregate* getAggregate();
-  
-  checkifspace() function in dragon_template
-  
-  ISS: setCrew and setCargo
- 
