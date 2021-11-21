@@ -363,6 +363,7 @@ void Simulation::falcon_standby(strategy* cr, int sat_count, FirstStageRocket* f
     cout << "Please select an option" << endl;
     cout << "1 -- load rocket with satellites" << endl;
     cout << "2 -- launch rocket and deploy satellites" << endl;
+    cout << "3 -- run static rocket test"<< endl;
     cout << "---------------------------------------------------------------------" << endl;
 
     int input;
@@ -378,6 +379,12 @@ void Simulation::falcon_standby(strategy* cr, int sat_count, FirstStageRocket* f
         f9_fsr.push_back(fsr);
         f9_fsr_count++;
         menu();
+    }
+    else if(input == 3)
+    {
+        cout << "running static fire test" << endl;
+        cout << "test successful" << endl;
+        falcon_standby(cr, sat_count, fsr);
     }
     else
     {
