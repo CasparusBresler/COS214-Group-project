@@ -13,47 +13,30 @@ ISS::~ISS() {}
 
 void ISS::setMemento(ISSMemento *m)
 {
-    crewmembers.clear();
+       crewmembers.clear();
     cargohold.clear();
     state= nullptr;
-
-    vector<string> tempnames;
-    for(int i = 0; i < m->getcrew().size(); i++)
+    
+    vector<string> crewnames = m->getcrew();
+    vector<string> cargonames = m->getcargo();
+    
+    int csize = m->getcrew().size();
+    for(int i = 0; i < csize; i++)
     {
-        crew* tempc = new crew(m->getcrew().back());
+        crew* tempc = new crew(crewnames.back());
         crewmembers.push_back(tempc);
-        tempnames.push_back(m->getcrew().back());
-        m->getcrew().pop_back();
+        crewnames.pop_back();
     }
 
-
-    for(int i = 0; i < tempnames.size(); i++)
+    csize = m->getcargo().size();
+    for(int i = 0; i < csize; i++)
     {
-        m->getcrew().push_back(tempnames.back());
-        tempnames.pop_back();
-    }
-
-    vector<string> tempcnames;
-    for(int i = 0; i < m->getcargo().size(); i++)
-    {
-        cargo* tempca = new cargo(m->getcargo().back());
+        cargo* tempca = new cargo(cargonames.back());
         cargohold.push_back(tempca);
-        tempcnames.push_back(m->getcargo().back());
-        m->getcargo().pop_back();
+        cargonames.pop_back();
     }
-
-
-
-    for(int i = 0; i < tempcnames.size(); i++)
-    {
-        m->getcargo().push_back(tempcnames.back());
-        tempcnames.pop_back();
-    }
-
-
 
     state = m->getState()->clone();
-
 }
 
 ISSMemento* ISS::createMemento()
