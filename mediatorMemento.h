@@ -18,7 +18,7 @@ class observer;
 
 ///This is the mediatorMemento class
 ///
-/// It has as an object of type aggregate and an object of type Iterator as private memebers
+/// It has as integer, vector of type string and 2 vecotors of type bool as private memebers
 class mediatorMemento
 {
 private:
@@ -26,26 +26,41 @@ private:
     vector<string> names;
     vector<bool> orbits;
     vector<bool> OS;
-    // aggregate *satellites;
-    // Iterator *it;
+   
 
 public:
-    /// This is the ISS Constructor.
+   
+   
+/// This is the mediatorMemento Constructor.
 /// 
-///@param i is as an object of type aggregate
-///@param o is an object of type Iterator
+///@param s is going to initialize the size
+///@param n is going to initialize the names
+///@param o is going to initialize the orbits
+///@param OS is going to initialize the OS
     mediatorMemento(int s, vector<string> n, vector<bool> o, vector<bool> OS);
-    /// This is the getSatellites funcion.
+
+/// This is the getSize funcion.
 ///
-/// This used as an accessor method to private member satellites
-/// @return vector of object type aggregate 
+/// This used as an accessor method to private member size
+/// @return integer value
     int getSize();
-    /// This is the getIT funcion.
+
+/// This is the getNames funcion.
 ///
-/// This used as an accessor method to private member it
-/// @return vector of object type Iterator 
+/// This used as an accessor method to private member names
+/// @return vector of object type string 
     vector<string> getNames();
+
+/// This is the getOrbits funcion.
+///
+/// This used as an accessor method to private member orbits
+/// @return vector of object type bool 
     vector<bool> getOrbits();
+
+/// This is the getOStatus funcion.
+///
+/// This used as an accessor method to private member OS
+/// @return vector of object type bool 
     vector<bool> getOStatus();
 };
 

@@ -37,17 +37,12 @@ public:
     ~dragon_template();
     
  /**
- * @brief virtual load function of dragon_template
+ * @brief virtual checkIfSpace  function of dragon_template
  * Implemented in the concrete classes
- * The load function loads in either cargo or passangers into the rocket
  * @return nothing
  * @param s 
  */
-    
-    
-    
-    
-    virtual bool checkIfSpace()=0;
+ virtual bool checkIfSpace()=0;
     
     
     

@@ -16,20 +16,29 @@ private:
     mediatorMemento *m;
 
 public:
-    /// This is the getMed funcion.
+/// This is the mediators Constructor.
+/// 
 ///
-/// This used as an accessor method to private member mediator
-/// @return an object of type mediatorMemento
-/// @see setMed
     mediators();
-    /// This is the setMed function
+
+/// This is the mediators deconstructor.
+/// 
+///
+    ~mediators();
+
+/// This is the setMed function
 ///
 /// Used to chnage the value of the private memeber mediator
 /// @param m  is of type mediatorMemento
 /// @return nothing 
 /// @see getMed() 
-    ~mediators();
     void SetMed(mediatorMemento *m);
+        
+/// This is the getMed funcion.
+///
+/// This used as an accessor method to private member mediator
+/// @return an object of type mediatorMemento
+/// @see setMed
     mediatorMemento *getMed();
     
 };

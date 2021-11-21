@@ -21,16 +21,22 @@ private:
     Mediator* med;
     int counter;
 public:
-    ///This is the satellite_factory constructor.
+///This is the satellite_factory constructor.
 ///
 ///@param a is an object of type aggregate
 ///@param m is an object of type Mediator
     satellite_factory(aggregate*, Mediator*);
-    ///This is the create_sat function.
+   
+///This is the create_sat function.
 ///
 ///@return an object of type satellite
     satellite* create_sat();
-    void setcounter(int);
+
+///This is the setcounter function.
+///
+///@param i is the value to be used to set the counter.
+///@return nothing
+    void setcounter(int i);
 
 
 };
