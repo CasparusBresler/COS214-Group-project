@@ -759,7 +759,7 @@ void Simulation::DCargoOrbit(DragonCargo *cr)
 
             vector<DragonCargo*>::iterator iter;
             iter = Dragons_cargo.begin();
-            for(int i = 0; i < Dragons_crew.size(); i++)
+            for(int i = 0; i < Dragons_cargo.size(); i++)
             {
 
                 if((*iter) == cr)
