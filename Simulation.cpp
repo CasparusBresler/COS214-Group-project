@@ -751,7 +751,7 @@ void Simulation::DCargoOrbit(DragonCargo *cr)
                 attach_command->execute(cr, nullptr);
                 cr->docked = true;
                 unload_command->execute(cr, nullptr);
-                cout << "cargo has been loaded into the ISS" << endl;
+                cout << "cargo has been loaded the ISS" << endl;
                 menu();
             }
             else
@@ -922,3 +922,11 @@ void Simulation::ManageSats()
     }
 
 }
+
+
+
+
+
+
+
+
