@@ -23,9 +23,6 @@ Simulation::Simulation()
     fheavy_fsr_count = 0;
     dragons_in_orbit = 0;
 
-
-
-
     loadSats_command = new load_sats();
     launch_falcon_command = new launch();
     load_command = new load();
@@ -56,6 +53,8 @@ void Simulation::menu()
     cout << "6 -- Save ISS State" << endl;
     cout << "7 -- Load Satellite State" << endl;
     cout << "8 -- Load ISS State" << endl;
+    cout << "9 -- Reset Satellites" << endl;
+    cout << "10 -- Reset ISS and Dragon Rockets" << endl;
     cout << "---------------------------------------------------------------------" << endl;
 
     int input;
@@ -143,6 +142,10 @@ void Simulation::menu()
         space_stations* temp = new space_stations();
         temp->setSpst(iss->createMemento());
         iss_saves.push_back(temp);
+//        for(int i =0; i < temp->getSpst()->getcrew().size(); i++)
+//        {
+//            cout << temp->getSpst()->getcrew().data()[i] << endl;
+//        }
         cout << "iss saved" << endl;
         menu();
     }
@@ -196,7 +199,8 @@ void Simulation::menu()
         cout << "---------------------------------------------------------------------" << endl;
         cout << "select a save" << endl;
         vector<space_stations *>::iterator iter;
-        for (iter = iss_saves.begin(); iter != iss_saves.end(); ++iter) {
+        for (iter = iss_saves.begin(); iter != iss_saves.end(); ++iter)
+        {
             counter++;
             cout << counter << " -- SAVE " << counter << endl;
         }
@@ -212,6 +216,23 @@ void Simulation::menu()
             iss->setMemento(iss_saves.data()[counter - 1]->getSpst());
             menu();
         }
+    }
+    else if(input == 9)
+    {
+        agg = new aggregate();
+        mediator = new Mediator(agg);
+        num_sats = 0;
+        sat_fact = new satellite_factory(agg, mediator);
+        menu();
+    }
+    else if(input == 10)
+    {
+        iss = new ISS();
+        dragons_in_orbit = 0;
+        Dragons_crew.empty();
+        Dragons_cargo.empty();
+        menu();
+
     }
     else
     {
@@ -591,6 +612,7 @@ void Simulation::DCrewOrbit(DragonCrew* cr)
                 attach_command->execute(cr, nullptr);
                 cr->docked = true;
                 unload_command->execute(cr, nullptr);
+                cout << "crew has boarded the ISS" << endl;
                 menu();
             }
             else
@@ -729,6 +751,7 @@ void Simulation::DCargoOrbit(DragonCargo *cr)
                 attach_command->execute(cr, nullptr);
                 cr->docked = true;
                 unload_command->execute(cr, nullptr);
+                cout << "cargo has been loaded into the ISS" << endl;
                 menu();
             }
             else
@@ -899,11 +922,3 @@ void Simulation::ManageSats()
     }
 
 }
-
-
-
-
-
-
-
-
