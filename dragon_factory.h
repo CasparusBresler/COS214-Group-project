@@ -41,7 +41,7 @@ public:
      * @see dragonCargo_factory
      * @see dragonCrew_factory
      */
-    virtual dragon_template *createDragon() = 0;
+    virtual dragon_template *createDragon(ISS *iss) = 0;
 };
 
 #endif // __DRAGON_FACTORY_H__

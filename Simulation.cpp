@@ -55,6 +55,7 @@ void Simulation::menu()
     cout << "8 -- Load ISS State" << endl;
     cout << "9 -- Reset Satellites" << endl;
     cout << "10 -- Reset ISS and Dragon Rockets" << endl;
+    cout << "11 -- End simulation" << endl;
     cout << "---------------------------------------------------------------------" << endl;
 
     int input;
@@ -233,6 +234,10 @@ void Simulation::menu()
         Dragons_cargo.empty();
         menu();
 
+    }
+    else if(input == 11)
+    {
+           cout << "simulation shut down" << endl;
     }
     else
     {
