@@ -81,17 +81,8 @@ public:
     /// @return an object of type docked_state
     docked_state *getDockedState();
 
-
-    /// This is the setCrew funcion.
-    ///
-    /// This used as a modifier method to private member crewmembers
-    /// @return nothing
     void setCrew(vector<crew *> vector);
 
-    /// This is the setCargo funcion.
-    ///
-    /// This used as a modifier method to private member cargohold
-    /// @return nothing
     void setCargo(vector<cargo *> vector);
 };
 

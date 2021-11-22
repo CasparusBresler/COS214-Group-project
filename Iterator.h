@@ -56,10 +56,7 @@ public:
 /// @return nothing
     void update(bool);
     
-    // This is the getSats funcion.
-///
-/// This used as an accessor method to private member satellites
-/// @return vector of object type satellite 
+    
     vector<satellite *>getSats();
 };
 

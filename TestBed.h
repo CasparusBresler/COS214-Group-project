@@ -12,7 +12,7 @@ private:
 public:
     TestBed();
     ~TestBed();
-    int run();
+    bool run();
 };
 
 #endif // __TESTBED_H__
