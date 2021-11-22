@@ -18,6 +18,11 @@ string crew::getName()
     return this->name;
 }
 
+void crew::setName(string word)
+{
+    this->name = word;
+}
+
 crew * crew::clone()
 {
     crew* temp = new crew(getName());
