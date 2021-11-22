@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['getaggregate_0',['getAggregate',['../class_mediator.html#a448795197d9f40ea55ecc7c7033f9f9f',1,'Mediator']]],
+  ['getcargo_1',['getCargo',['../class_i_s_s.html#a45747619395d0f97297011e025afa99f',1,'ISS']]],
+  ['getcargo_2',['getcargo',['../class_i_s_s_memento.html#a6db9185294848714f8a363135f480680',1,'ISSMemento']]],
+  ['getcrew_3',['getCrew',['../class_i_s_s.html#ac762acb2a48157150cd59cfcef87c396',1,'ISS']]],
+  ['getcrew_4',['getcrew',['../class_i_s_s_memento.html#a2d831c808e5ef4a298420bdd05591737',1,'ISSMemento']]],
+  ['getdest_5',['getDest',['../classdragon__template.html#ae493e40c5f8d35b24d144252f6d9867d',1,'dragon_template::getDest()'],['../class_dragon_cargo.html#af739dbcb07dd2b1db05a417f28f357c8',1,'DragonCargo::getDest()'],['../class_dragon_crew.html#afe7aa47c0d02f3564e0a93ea3e3a7a7a',1,'DragonCrew::getDest()']]],
+  ['getdockedstate_6',['getDockedState',['../class_i_s_s.html#a8a786725e6543a356c30005d192ba508',1,'ISS']]],
+  ['getlaunched_7',['getLaunched',['../classstrategy.html#a55f25489e264f24aae881416956eaf8e',1,'strategy']]],
+  ['getmed_8',['getMed',['../classmediators.html#a7cbbd2fdf599482ad9d2b75677e5a5c6',1,'mediators']]],
+  ['getname_9',['getName',['../classcargo.html#ab0419f51d4b4ee9754ab075416069cf7',1,'cargo::getName()'],['../classcrew.html#ac036047feabd59385f003a80f78ce4e3',1,'crew::getName()'],['../classsatellite.html#ad6372b0091b907f02efe0110c4b517f4',1,'satellite::getName()']]],
+  ['getnames_10',['getNames',['../classmediator_memento.html#a58b01aa92358fb647ec0b177669a9bb5',1,'mediatorMemento']]],
+  ['getobserv_11',['getObserv',['../classsatellite.html#a3a25819e1c7d7c31d43cfc0c4fc864ea',1,'satellite']]],
+  ['getorbit_12',['getOrbit',['../classsatellite.html#a61ffde570a9bb533440e9187df734faa',1,'satellite']]],
+  ['getorbits_13',['getOrbits',['../classmediator_memento.html#aa98af9ba93fd49b90a0a54cecf9e8590',1,'mediatorMemento']]],
+  ['getostatus_14',['getOStatus',['../classmediator_memento.html#a5e6192f069187f66da0f51583f399913',1,'mediatorMemento']]],
+  ['gets0_15',['getS0',['../classsatellite.html#ad5ac97570472f9cca1347d55d790a986',1,'satellite']]],
+  ['getsats_16',['getSats',['../class_iterator.html#ad84fdca74b9f37bb53f3a7ebf227033b',1,'Iterator']]],
+  ['getsize_17',['getSize',['../classmediator_memento.html#aa29de509766a26b14b0c704ff6642519',1,'mediatorMemento']]],
+  ['getspst_18',['getSpst',['../classspace__stations.html#a24d61ff39b11bd20706fb86924124243',1,'space_stations']]],
+  ['getstate_19',['getState',['../class_i_s_s_memento.html#a22aa6cba621ac5a01401f5af9f7f7b87',1,'ISSMemento']]],
+  ['getstate_20',['getstate',['../classdocked.html#a53ce9eeead6cf16c83b0ed27892f8d8c',1,'docked::getstate()'],['../classdocked__state.html#a4d7889f4becf875e6b746ee4cd8f3b1c',1,'docked_state::getstate()'],['../classundocked.html#ae9698bd70c85aa8df402a784292caa17',1,'undocked::getstate()']]]
+];
