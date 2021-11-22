@@ -50,8 +50,8 @@ public:
      * @return nothing
      * @param word 
      */
-     void setName(string word);
-     
+    void setName(string word);
+
      /**
      * @brief cloning function for the crew class
      * Uses the prototype design pattern

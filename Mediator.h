@@ -50,11 +50,6 @@ public:
 /// @return an object of type ISSMemento
 /// @see setMemento()
     mediatorMemento *createMemento();
-
-    /// This is the getAggregate funcion.
-///
-/// This used as an accessor method to private member satellites
-/// @return an object of type aggregate
     aggregate* getAggregate();
 
 };
