@@ -238,6 +238,7 @@ void Simulation::menu()
     else if(input == 11)
     {
            cout << "simulation shut down" << endl;
+            return;
     }
     else
     {
