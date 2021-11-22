@@ -98,14 +98,6 @@ public:
 ///@return a string containing the name of the satellite
     satellite(string, Mediator*);
 
-
-/// this is the satellite constructor.
-///
-///@param n is for the a string name
-///@param med is an object of type observer
-///@return a string containing the name of the satellite
-    satellite(string, Mediator*);
-
 /// this is the workLoad function.
 ///
 /// This used to manage thw worload of the satellites
